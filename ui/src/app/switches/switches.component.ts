@@ -1,22 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import {TOGGLE_SWITCHES} from "../toggle_switches";
-import {Switch} from "../switch";
+import {Component, OnInit} from '@angular/core';
+import {Switch, SWITCHES, Telemetry} from '../telemetry';
+import {RovStateService} from '../rovstate.service';
 
 @Component({
   selector: 'app-switches',
   templateUrl: './switches.component.html',
-  styleUrls: ['./switches.component.css']
+  styleUrls: ['./switches.component.css'],
+  providers: [RovStateService]
 })
 
 export class SwitchesComponent implements OnInit {
 
-  buttons: Switch[];
+  rovService: RovStateService;
+  switchState: Switch[];
 
-  constructor() {
-    this.buttons = TOGGLE_SWITCHES;
+  constructor(rovService: RovStateService) {
+    this.rovService = rovService;
+  }
+
+  changeState() {
+    this.rovService.pushState(new Telemetry(this.switchState));
   }
 
   ngOnInit() {
-  }
+    this.rovService.state.subscribe((newTelemetry: Telemetry) => {
+      console.log('component subscfriptioin triggerd: ' + typeof newTelemetry);
+      this.switchState = newTelemetry.switchState;
+    });
 
+  }
 }

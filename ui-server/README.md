@@ -5,8 +5,4 @@ This module is responsible for communication between the surface control termina
 ## Building
 
 ### Dependencies
-* pkg-config
-* libavformat
-* ffmpeg
-* opus
-* libvpx
+No native dependencies currently needed, see [requirements.txt](requirements.txt) for Python dependencies.

@@ -34,7 +34,7 @@ export class ThreejsComponent implements AfterViewInit {
 
   private createScene() {
     this.scene = new THREE.Scene();
-    this.scene.add(new THREE.AxisHelper(200));
+    this.scene.add(new THREE.AxesHelper(200));
     const loader = new THREE.PCDLoader();
     loader.load('assets/model/ism_test_horse.pcd', this.onModelLoadingCompleted);
   }

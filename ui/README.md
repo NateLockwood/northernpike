@@ -1,18 +1,16 @@
 # Northern Pike Client UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+This project uses [Angular CLI](https://github.com/angular/angular-cli) version 7.0.0. If you are using an earlier version of Angular please run `ng update`.
 
 ## Development setup
 
 1. Install [Node.js and NPM](https://nodejs.org/en/download/).
 
-2. Install Angular CLI by running ` npm install -g @angular/cli --save` in the project directory.
-
-3. Install project dependencies listed in `package.json` by running `npm install`.
+2. Install project dependencies listed in `package.json` by running `npm install`.
 
 ## Development server
 
-Run `ng serve --open` for a dev server. `http://localhost:4200/` should open in your default browser. The app will automatically reload if you change any of the source files.
+At this point developing the Client UI using the `aiohttp` based server is recommended. Use `ng build --watch` to compile the project and watch for changes. The Python server serves the files generated in `northernpike\ui\dist`.
 
 ## Code scaffolding
 
